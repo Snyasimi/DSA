@@ -6,6 +6,7 @@ Data structures and algorithims using c
 
 Data structure defines the various ways in which data can be stored in memory and the various operations which can be performed on a data structure. 
 There are several categories of data structures, these include
+
     * Linear.
     * Non-linear.
 
@@ -24,7 +25,15 @@ examples of these include,
 
 ### 1. ARRAYS
 
-An array can be defined as  contigious blocks of homogenous data, the array can be of fixed size or a dynamic array, this depends on the implementation.
+An array can be defined as  contiguous blocks of memory containing homogeneous data.
+Arrays can be accessed randomly thus their access time is constant, arrays have some draw backs which include
+
+1. Cannot grow in size.
+1. Deleteing at the front of an array is resource intensive.
+1. 
+
+#### IMPLEMENTATION
+
 
 
 ## NON-LINEAR DATA STRUCTURES
