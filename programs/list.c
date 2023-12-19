@@ -8,6 +8,7 @@ struct Node {
 	};
 
 	struct Node *head,*newNode,*temp,*previous;
+	int numberOfNodes = 0;
 
 	struct Node* createNode(int data){
 	
@@ -15,6 +16,7 @@ struct Node {
 		if(addr != NULL)
 		{
 			addr->data = data;
+			numberOfNodes++;
 			return addr;
 		}
 		printf("Could not create Node");
@@ -39,20 +41,25 @@ struct Node {
 
 	}
 
-	void Set(int value,int position){
+	void Set(int position,int value){
 	
 		temp = head;
-		for(int i = 1 ; i <= position; i++){
-	
-			if( i == position){
-			
-				temp->data = value;
 
-			}
-			temp = temp->next;
+		if(position <= numberOfNodes){
+		
+			for(int i = 1; i <= numberOfNodes; i++){
 			
+				if( i == position){
+				
+					temp->data = value;
+					return;
+
+				}
+				temp = temp->next;
+			}	
 		}
 
+		printf("Position Invalid\n");
 		return;
 
 	}
@@ -98,7 +105,7 @@ void deleteNode(int data){
 	
 		free(head);
 	}
-	while(temp != NULL){
+	while(temp->next != NULL){
 
 		if(temp->data == data){
 			//delete node and join links
@@ -111,11 +118,11 @@ void deleteNode(int data){
 	}
 }
 
-int get(int data){
+/* struct Node * */int get(int data){
 
 	//Return the element's address
 	temp = head;
-	while(temp->next != NULL){
+	while(temp->next != NULL ){
 	
 		if(temp->data == data){
 		
@@ -125,7 +132,6 @@ int get(int data){
 	}
 
 	printf("No element found");
-	exit(1);
 }
 
 struct Node *indexOf(int value){
@@ -152,13 +158,19 @@ struct Node *indexOf(int value){
 void insertAt(int position,int data){
 
 	temp = head;
-	previous = head;
+	//previous = head;
 
 	
 
 	for(int i = 1; i < position; i++){
 		previous = temp;
 		temp = temp->next;
+	}
+
+	if(temp == head){
+	
+		insertBegining(data);
+		return;
 	}
 	
 	newNode = createNode(data);
@@ -179,11 +191,18 @@ int main(){
 	insertBegining(27);
 	insertEnd(23);
 	insertAt(3,62);
+	insertAt(1,100);
+	//insertAt(200,5);
+	Set(1,33);
 
 	Display();
 
-	printf("INDEX is:%p",indexOf(22));
+	deleteNode(55);
+	Display();
+
+	printf("\nINDEX is:%p",indexOf(22));
 	printf("\nELEMENT: %d",get(22));
+	printf("\nNUMBER OF NODES = %d",numberOfNodes);
 
 
 
