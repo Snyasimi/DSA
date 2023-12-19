@@ -6,7 +6,6 @@ Data structures and algorithims using c
 
 Data structure defines the various ways in which data can be stored in memory and the various operations which can be performed on a data structure. 
 There are several categories of data structures, these include
-
     * Linear.
     * Non-linear.
 
