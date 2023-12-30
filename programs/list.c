@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 
 struct Node {
 	
@@ -7,7 +8,7 @@ struct Node {
 		struct Node* next;
 	};
 
-	struct Node *head,*newNode,*temp,*previous;
+	struct Node *head=NULL,*newNode,*temp,*previous;
 	int numberOfNodes = 0;
 
 	struct Node* createNode(int data){
@@ -17,6 +18,13 @@ struct Node {
 		{
 			addr->data = data;
 			numberOfNodes++;
+
+			if(head == NULL){
+			
+				head = addr;
+
+			}
+
 			return addr;
 		}
 		printf("Could not create Node");
@@ -79,7 +87,7 @@ void Display(){
 		return;
 	}
 
-	printf("List Empty");
+	printf("LIST EMPTY\n");
 	return;
 }
 
@@ -104,6 +112,7 @@ void deleteNode(int data){
 	if(head->next==NULL && head->data == data){
 	
 		free(head);
+		return;
 	}
 	while(temp->next != NULL){
 
@@ -111,6 +120,7 @@ void deleteNode(int data){
 			//delete node and join links
 			previous->next = temp->next;
 			free(temp);
+			return;
 		}
 
 		previous = temp;
@@ -132,6 +142,7 @@ void deleteNode(int data){
 	}
 
 	printf("No element found");
+	return 0;
 }
 
 struct Node *indexOf(int value){
@@ -140,7 +151,7 @@ struct Node *indexOf(int value){
 	if(head == NULL)
 	{
 		printf("List empty");
-		exit(1);
+		return 0;
 	}
 
 	while(temp->next != NULL){
@@ -157,6 +168,11 @@ struct Node *indexOf(int value){
 
 void insertAt(int position,int data){
 
+	if(head == NULL){
+	
+		printf("LIST EMPTY!!\nADD ITEMS TO CONTINUE\n");
+		return;
+	}
 	temp = head;
 	//previous = head;
 
@@ -184,6 +200,72 @@ void insertAt(int position,int data){
 
 
 int main(){
+
+
+	printf("**\t**LISTS C PROGRAM**\t**\n");
+
+	printf("Select a choice to continue\n");
+	int choice = 0;
+	int data,position;
+
+	while(true){
+	
+		printf("\tPICK A NUMBER\n1.INSERTAT BEGINING\n2.INSERT AT END\n3.SELECT A POSITION TO INSERT\n4.UPDATE A VALUE IN A GIVEN POSITION\n5.DISPLAY LIST\n6.QUIT\n: ");
+
+		scanf("%d",&choice);
+
+		if(choice == 6){
+			printf("EXITING PROGRAM....\n");
+			break;
+		}
+
+		switch(choice){
+		
+			case 1:
+				printf("\nENTER DATA TO INSERT\n:");
+				scanf("%d",&data);
+				insertBegining(data);
+				printf("\nDisplaying updataed list\n");
+				Display();
+				break;
+			case 2 :
+
+				printf("\nENTER DATA TO INSERT\n:");
+				scanf("%d",&data);
+				insertEnd(data);
+				printf("\nDisplaying updataed list\n");
+				Display();
+				break;
+
+			case 3 :
+				printf("\nENTER DATA TO INSERT\n:");
+				scanf("%d",&data);
+				printf("ENTER POSITION TO INSERT\n:");
+				scanf("%d",&position);
+				insertAt(position,data);
+				printf("\nDisplaying updataed list\n");
+				Display();
+				break;
+			case 4 :
+
+				printf("\nENTER DATA TO UPDATE\n:");
+				scanf("%d",&data);
+				printf("ENTER THE POSITION TO UPDATE\n:");
+				scanf("%d",&position);
+				Set(position,data);
+				printf("\nDisplaying updataed list\n");
+				Display();
+				break;
+			case 5 :
+				printf("\nDisplaying List\n");
+				Display();
+				break;
+
+
+		}
+	}
+	return 0;
+
 
 	head = createNode(55);
 	insertBegining(22);
