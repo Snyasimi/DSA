@@ -6,6 +6,7 @@ struct Node {
 	
 		int data;
 		struct Node* next;
+		struct Node* previous;
 	};
 
 	struct Node *head=NULL,*newNode,*temp,*previous;
@@ -17,6 +18,7 @@ struct Node {
 		if(addr != NULL)
 		{
 			addr->data = data;
+			addr->previous = NULL;
 			numberOfNodes++;
 
 			if(head == NULL){
@@ -101,14 +103,19 @@ void insertEnd(int data){
 	}
 
 	temp->next = createNode(data);
+	temp->next->previous = temp;
 }
 
 void deleteNode(int data){
 
 	//Detele a node by data
+	if(head == NULL){
+	
+		printf("\nLIST EMPTY\n");
+		return;
+	}
 	temp = head;
-	previous = head;
-
+	
 	if(head->next==NULL && head->data == data){
 	
 		free(head);
@@ -117,8 +124,16 @@ void deleteNode(int data){
 	while(temp->next != NULL){
 
 		if(temp->data == data){
-			//delete node and join links
+
+			if(temp == head){
+			
+				head = head->next;
+				free(temp);
+				return;
+			}
+			//delete node and join links 
 			previous->next = temp->next;
+			temp->next->previous = previous;
 			free(temp);
 			return;
 		}
@@ -210,11 +225,11 @@ int main(){
 
 	while(true){
 	
-		printf("\tPICK A NUMBER\n1.INSERTAT BEGINING\n2.INSERT AT END\n3.SELECT A POSITION TO INSERT\n4.UPDATE A VALUE IN A GIVEN POSITION\n5.DISPLAY LIST\n6.QUIT\n: ");
+		printf("\tPICK A NUMBER\n1.INSERTAT BEGINING\n2.INSERT AT END\n3.SELECT A POSITION TO INSERT\n4.UPDATE A VALUE IN A GIVEN POSITION\n5.DISPLAY LIST\n6.DELETE A NODE\n7.QUIT\n: ");
 
 		scanf("%d",&choice);
 
-		if(choice == 6){
+		if(choice == 7){
 			printf("EXITING PROGRAM....\n");
 			break;
 		}
@@ -258,6 +273,13 @@ int main(){
 				break;
 			case 5 :
 				printf("\nDisplaying List\n");
+				Display();
+				break;
+			case 6 :
+				printf("ENTER THE DATA YOU WANT TO DELETE\n:");
+				scanf("%d",&data);
+				deleteNode(data);
+				printf("\nDISPLAYING UPDATED LIST\n");
 				Display();
 				break;
 
