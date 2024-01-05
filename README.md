@@ -53,6 +53,7 @@ The basic Operations perfomed on arrays are
 - Display
 - Trasverse
 
+Implementation examples can be found [here](./programs/Arrays.c)
 Lets talk about these operations 
 
 ##### 1. INSERTION
