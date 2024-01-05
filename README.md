@@ -60,7 +60,7 @@ Lets talk about these operations
 The insertion operation means to add something to the array, we can add anywhere front,end or any given index.
 Though remenber adding at the front or at an index close to the begining is resource intensive as all the elements after it need to be shifted to the right.
 
-######Algorithm 
+###### Algorithm 
 INSERTING AN ELEMENT AT A GIVEN POSITION
 
 1. Declare two variables, SIZE and MAX SIZE. SIZE will be used to keep the index of the last item in the array,Max size is the size of the array.
