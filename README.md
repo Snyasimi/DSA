@@ -58,7 +58,33 @@ Lets talk about these operations
 ##### 1. INSERTION
 
 The insertion operation means to add something to the array, we can add anywhere front,end or any given index.
-Though remenber adding at the front or at an index close to the begining is resource intensive as all the elements after it need to be shifted to the left. 
+Though remenber adding at the front or at an index close to the begining is resource intensive as all the elements after it need to be shifted to the right.
+
+######Algorithm 
+INSERTING AN ELEMENT AT A GIVEN POSITION
+
+1. Declare two variables, SIZE and MAX SIZE. SIZE will be used to keep the index of the last item in the array,Max size is the size of the array.
+1. Check if the given Positon is valid, i.e its not more than MAX SIZE.
+1. If the position is less than max size, you should start a loop from the last element in the array. This loop is used to shift the items to the right. The way this loop works is 
+	* The sarting index should be SIZE - 1 *since arrays always start from position 0*.
+	* While iterating, shift the items to the right i.e *Array[i+1] = Array[i]* .
+	* When the loops stop condition will be Position-1. Thus when u reach Position-1 you should terminate the loop.
+	* After the loop has been terminated, insert the item at that position *Array[Position-1] = data*. Keep in mind how we count the postions ;).
+ 
+1. Thats all.
+
+now lets move on to the next operation. Deletion.
+
+#### 2. DELETION 
+
+This operation is self expalantory, to delete an item in the array.
+there are two ways in which we can approach this.
+	* Deleteing the last item in the array.
+	* Deleting at a specified index.
+let's start with the first one 
+
+Deleting at a specified index
+
 
 
 
