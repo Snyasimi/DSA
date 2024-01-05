@@ -61,7 +61,7 @@ The insertion operation means to add something to the array, we can add anywhere
 Though remenber adding at the front or at an index close to the begining is resource intensive as all the elements after it need to be shifted to the right.
 
 ###### Algorithm 
-INSERTING AN ELEMENT AT A GIVEN POSITION
+###### INSERTING AN ELEMENT AT A GIVEN POSITION
 
 1. Declare two variables, SIZE and MAX SIZE. SIZE will be used to keep the index of the last item in the array,Max size is the size of the array.
 1. Check if the given Positon is valid, i.e its not more than MAX SIZE.
@@ -70,8 +70,15 @@ INSERTING AN ELEMENT AT A GIVEN POSITION
 	* While iterating, shift the items to the right i.e *Array[i+1] = Array[i]* .
 	* When the loops stop condition will be Position-1. Thus when u reach Position-1 you should terminate the loop.
 	* After the loop has been terminated, insert the item at that position *Array[Position-1] = data*. Keep in mind how we count the postions ;).
+	* Add SIZE by one.
  
-1. Thats all.
+Thats all.
+
+##### INSERTING AT THE END OF THE ARRAY
+
+In this one, we just insert at the end, how?
+
+remember the SIZE variable that keeps track of the last element in the array, we add it by one and insert the element at that position *ARRAY[SIZE] = data* 
 
 now lets move on to the next operation. Deletion.
 
