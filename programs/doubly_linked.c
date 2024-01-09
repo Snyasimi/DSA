@@ -41,6 +41,7 @@ struct Node {
 
 			newNode = createNode(data);
 			newNode->next = head;
+			head->previous = newNode;
 			head = newNode;
 			return;
 		}
