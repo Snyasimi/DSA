@@ -105,6 +105,7 @@ void insertEnd(int data){
 
 	temp->next = createNode(data);
 	temp->next->previous = temp;
+	return;
 }
 
 void deleteNode(int data){
