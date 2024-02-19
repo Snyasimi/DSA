@@ -42,7 +42,7 @@ But there are also some advantages using arrays, these include
 
  
 
-#### OPERATIONS
+### OPERATIONS
 
 The basic Operations perfomed on arrays are
 
@@ -56,13 +56,13 @@ The basic Operations perfomed on arrays are
 Implementation examples can be found [here](./programs/Array.c)
 Lets talk about these operations 
 
-##### 1. INSERTION
+### 1. INSERTION
 
 The insertion operation means to add something to the array, we can add anywhere front,end or any given index.
 Though remenber adding at the front or at an index close to the begining is resource intensive as all the elements after it need to be shifted to the right.
 
-###### Algorithm 
-###### INSERTING AN ELEMENT AT A GIVEN POSITION
+### Algorithm
+### INSERTING AN ELEMENT AT A GIVEN POSITION
 
 1. Declare two variables, SIZE and MAX SIZE. SIZE will be used to keep the index of the last item in the array,Max size is the size of the array.
 1. Check if the given Positon is valid, i.e its not more than MAX SIZE.
@@ -75,7 +75,7 @@ Though remenber adding at the front or at an index close to the begining is reso
  
 Thats all.
 
-##### INSERTING AT THE END OF THE ARRAY
+### INSERTING AT THE END OF THE ARRAY
 
 In this one, we just insert at the end, how?
 
@@ -83,7 +83,7 @@ remember the SIZE variable that keeps track of the last element in the array, we
 
 now lets move on to the next operation. Deletion.
 
-#### 2. DELETION 
+### 2. DELETION
 
 This operation is self expalantory, to delete an item in the array.
 there are two ways in which we can approach this.

@@ -8,11 +8,17 @@ int main(){
 	char name_of_file[30];
 	char highschool[30];
 	char university[30];
+	char directory[50];
+
+
+	printf("Enter the name of the directory you wish to create\n");
+	scanf("%s",&directory);
+
 
 	printf("Enter the name of the file that u wish to create\n");
 	scanf("%s",&name_of_file);
 
-	int fd = open(name_of_file,O_APPEND | O_RDWR | O_CREAT,0777); 
+	int fd = open("question2/q2.txt",O_APPEND | O_RDWR | O_CREAT,0777); 
 
 	if(fd < 0){
 	
