@@ -85,17 +85,44 @@ now lets move on to the next operation. Deletion.
 
 ### 2. DELETION
 
-This operation is self expalantory, to delete an item in the array.
+To delete an item in the array.
 there are two ways in which we can approach this.
 	* Deleteing the last item in the array.
 	* Deleting at a specified index.
 let's start with the first one 
 
-Deleting at a specified index
+#### 1.Deleting at a specified index
+
+first, we go to that position and move every element to its right to the left by one step
+
+for this, we should check if theres enough space to move the elements,if not we return an underflow 
+
+#### 2.Searching and deleting
+
+For this, we have to search  the array for the element.
+If the array is sorted, we can use searching algorithms.
 
 
+### 3. SEARCHING.
 
+Searching-> looking for the item in the array, for this we can use two methods
+	
+	* Trasversing the array
+	* Using searching algorithms
 
+Using searching algorithms only applies when the array is sorted.
+
+#### 1. Trasversing
+
+This method involves walking through the entire array, doing comparion on every element.
+This inturn uses too much compute, this works best in unsorted arrays.
+
+#### 2. Using searching algorithms
+
+The catch is, the items need to be sorted
+Looking for an element using the searching algorithms
+
+  
 
 
 ## NON-LINEAR DATA STRUCTURES
@@ -106,5 +133,7 @@ Examples include,
     * Trees.
     * Graphs.
 
+### 4. UPDATE
 
+This operation involves updating the element at the given index.
 
