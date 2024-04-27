@@ -44,7 +44,7 @@ void deQueue(){
 		printf("\nUNDERFLOW ERROR, QUEUE EMPTY!!\n");
 		return;
 	}
-	else if(front == rear)
+	else if(front == rear && rear == SIZE -1)
 	{
 	
 		printf("%d DEQUEUED\n",Array[front]);
